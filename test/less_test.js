@@ -1,3 +1,5 @@
+"use strict";
+
 var grunt = require('grunt');
 
 /*
@@ -23,7 +25,7 @@ var grunt = require('grunt');
 exports.less = {
     no_compress: function(test) {
         var expect = 'body {\n  background: #000000;\n}\n';
-        var results = grunt.file.read('fixtures/output/test.css');
+        var results = grunt.file.read('test/fixtures/output/test.css');
 
         test.expect(1);
         test.equal(expect, results, "should compile LESS file");
@@ -31,7 +33,7 @@ exports.less = {
     },
     compress: function(test) {
         var expect = 'body{background:#000000;}\n';
-        var results = grunt.file.read('fixtures/output/test_compress.css');
+        var results = grunt.file.read('test/fixtures/output/test_compress.css');
 
         test.expect(1);
         test.equal(expect, results, "should compile and compress LESS file");
@@ -39,7 +41,7 @@ exports.less = {
     },
     yuicompress: function(test) {
         var expect = 'body{background:#000}';
-        var results = grunt.file.read('fixtures/output/test_yuicompress.css');
+        var results = grunt.file.read('test/fixtures/output/test_yuicompress.css');
 
         test.expect(1);
         test.equal(expect, results, "should compile yuicompress LESS file");
